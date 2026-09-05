@@ -18,9 +18,9 @@ jobs:
 
     steps:
       # Publish mkdocs-techdocs-core to PyPI
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
       - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@master
+        uses: actions/setup-python@2241d846baea6518b39bec0fb3859d75cb3d3c50 # master-2026-09-05
         with:
           python-version: ${{ matrix.python-version }}
       - name: Install pip, setuptools, and wheel
@@ -38,7 +38,7 @@ jobs:
             rm -fr ${distrib}
           popd >/dev/null || exit
       - name: Publish a Python distribution to PyPI
-        uses: pypa/gh-action-pypi-publish@v1.12.2
+        uses: pypa/gh-action-pypi-publish@15c56dba361d8335944d31a2ecd17d700fc7bcbc # v1.12.2
         with:
           user: __token__
           password: ${{ secrets.PYPI_API_KEY }}
